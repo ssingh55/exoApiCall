@@ -11,3 +11,12 @@ a {
 .sms {
   text-align: center;
 }
+
+input[type='text']{
+  height: 50px;
+  /* width: 50px; */
+}
+
+.getCallStatus {
+  text-align: center;
+}
