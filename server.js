@@ -25,7 +25,7 @@ let getCallStatus = async (req, res, next) => {
         // body: dataString
     };
 
-    async function callback(error, response, body) {
+    function callback(error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log('inside getcallstatus callback');
             // console.log('beforebody', body);

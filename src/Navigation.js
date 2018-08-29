@@ -9,6 +9,7 @@ const Navigation = () => {
             <NavLink to="/connecttwopersoncall">Click to connect call</NavLink>
             <NavLink to="/getsmsstatus">Click to get sms status</NavLink>
             <NavLink to="/getcallstatus">Click to get call status</NavLink>
+            {/* <NavLink to="/getdata">Click to get data</NavLink> */}
         </div>
     )
 }

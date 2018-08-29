@@ -6,6 +6,7 @@ import ConnectTwoPersonCall from './connectTwoPersonCall';
 import Home from './home';
 import GetSmsStatus from './getSmsStatus';
 import GetCallStatus from './getCallStatus';
+import GetDisplayData from './displayData';
 import Navigation from './Navigation';
 import Error from './Error';
 
@@ -21,6 +22,7 @@ class App extends Component {
             <Route path="/connecttwopersoncall" component={ConnectTwoPersonCall} />
             <Route path="/getsmsstatus" component={GetSmsStatus} />
             <Route path="/getcallstatus" component={GetCallStatus} />
+            <Route path="/getdata" component={GetDisplayData} />
             <Route component={Error} />
           </Switch>
         </div>

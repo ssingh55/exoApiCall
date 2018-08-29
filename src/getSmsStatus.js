@@ -33,8 +33,50 @@ export default class GetSmsStatus extends Component {
     render() {
         return (
             <div className="getSmsStatus" >
-                <input type="text" placeholder="Enter the sms id" ref="smsId" />
                 <button onClick={this.getSmsStatus.bind(this)}>Get status</button>
+            </div>
+        );
+    }
+}
+
+import React, { Component } from 'react';
+import DisplayData from './displayData';
+
+export default class GetCallStatus extends Component {
+    constructor() {
+        super();
+        this.state = {
+            dataToBeDisplayed: {}
+        }
+    }
+    getCallStatus(e) {
+        console.log('inside call status');
+        console.log(this.refs);
+        console.log(this.state);
+        const thisGetSmsStatus = this; //to avoid fetch this
+        let callId = this.refs.smsId.value;
+        // callId = 'd290902397dded13def088bd7331d433';
+        fetch('/api/getCallStatus/' + callId, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/x-www-urlencoded' }
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJsonData) {
+                console.log(JSON.stringify(myJsonData));
+                thisGetSmsStatus.setState({
+                    dataToBeDisplayed: myJsonData
+                })
+            });
+    }
+
+    render() {
+        return (
+            <div className="getCallStatus" >
+                <input type="text" placeiholder="Enter the sms id" ref="smsId" />
+                <button onClick={this.getCallStatus.bind(this)}>Get status</button>
+                <DisplayData dataDisplay={this.state.dataToBeDisplayed} />
             </div>
         );
     }
